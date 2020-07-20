@@ -1,0 +1,16 @@
+﻿@model RealSurfClub.Models.ViewModels.MyModel
+@{
+    ViewBag.Title = "AboutMe";
+}
+
+<h2>Через Модель</h2>
+
+Имя: @Model.Name<br>
+Возраст: @Model.Age<br>
+
+ <ul>
+ @foreach (int price in ViewBag.Price)
+{
+   <li class="price">@price</li>
+}
+</ul>

@@ -1,0 +1,43 @@
+﻿@model RealSurfClub.Models.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Клуб любителей серфинга - авторизация";
+}
+<!--                    Метод  Контроллер                       -->
+@using (Html.BeginForm("Login", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <form>
+        <link href="~/Content/Site.css" rel="stylesheet" />
+        <div class="panel my_div">
+            <div class="panel-heading color_of_panel">
+                Авторизация
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nickname)
+                    @Html.EditorFor(model => model.Nickname, new { htmlAtributes = new { @class = "form-control" } })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password)
+                    @Html.PasswordFor(model => model.Password, new { htmlAtributes = new { @class = "form-control" } })
+                    @*не работает с EditorFor*@
+                </div>
+                <div class="form-group">
+                    @Html.CheckBoxFor(model => model.RememberMe, new { @class = "my_checkbox" })
+                    @Html.LabelFor(model => model.RememberMe)
+                </div>
+
+                <div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+
+                <center><button type="submit" class="btn my_button">Войти</button></center>
+            </div>
+        </div>
+        <div class="my_div">
+            Нет аккаунта?
+            @Html.ActionLink("Зарегистрироваться", "Index", "Register", null, new { @class = "my_button btn" })
+        </div>
+            <!--<button type="button" class="btn">Зарегистрироваться</button>-->
+        
+    </form>
+}

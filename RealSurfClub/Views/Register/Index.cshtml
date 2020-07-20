@@ -1,0 +1,84 @@
+﻿@model RealSurfClub.Models.DBModels.User
+@{
+    ViewBag.Title = "Клуб любителей серфинга - Регистрация";
+}
+
+    <div class="panel my_div_register" >
+        <div class="panel-heading color_of_panel" >
+            Регистрация нового пользователя
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm("Register", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <form>
+                    <div class="all_left">
+                        <div class="form-group" title="От 3 до 20 символов. Латиница, кириллица, цифры и подчеркивания" >
+                            @Html.LabelFor(model => model.NickName)<br>
+                            @Html.EditorFor(model => model.NickName, new { htmlAtributes = new { @class = "my_input" } })
+                            @Html.ValidationMessageFor(model => model.NickName)
+                        </div>
+                        <div class="form-group" title = "Пример ex@example.ex">
+                            @Html.LabelFor(model => model.Email)<br>
+                            @Html.EditorFor(model => model.Email, new { htmlAtributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+                        <div class="form-group" title = "От 6 до 20 символов. Латиница, цифры и подчеркивания">
+                            @Html.LabelFor(model => model.Password)<br>
+                            @Html.PasswordFor(model => model.Password, new { htmlAtributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.PasswordConfirm)<br>
+                            @Html.PasswordFor(model => model.PasswordConfirm, new { htmlAtributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PasswordConfirm)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.LastName)<br>
+                            @Html.EditorFor(model => model.LastName, new { htmlAtributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name)<br>
+                            @Html.EditorFor(model => model.Name, new { htmlAtributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+
+                    </div>
+                        <div class="panel-body">
+                            @Html.LabelFor(model => model.Photo)
+                            <input name="imageData" type="file" accept="image/jpeg" />
+                        </div>
+                        <div class="panel-body">
+                            @Html.LabelFor(model => model.ContactInfo)
+                            @Html.TextAreaFor(model => model.ContactInfo, 10, 100, new { @class = "form-control my_textarea" })
+                        </div>
+                        <div class="panel-body">
+                            @Html.LabelFor(model => model.About)
+                            @*@Html.TextAreaFor(model => model.About, 10, 100, new { htmlAttributes = new { @class = "form-control" } })*@
+                            @Html.TextAreaFor(model => model.About, 10, 100,  new { @class = "form-control my_textarea" })
+                        </div>
+                        <div class="panel-body">
+                            @Html.LabelFor(model => model.Achievements)
+                            @Html.TextAreaFor(model => model.Achievements, 10, 100,  new { @class = "form-control my_textarea" })
+                        </div>
+
+                        <div>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            * - поля обязательны для ввода   
+                            <button type="submit" class="btn my_button">Зарегистрироваться</button>
+                        </div>
+                        
+                    
+                </form>
+            }
+
+        </div>
+        
+    </div>
+    <center><div>
+        Уже есть аккаунт?
+        @Html.ActionLink("Войти", "Index", "Home", null, new { @class = "my_button btn" })
+    </div></center>

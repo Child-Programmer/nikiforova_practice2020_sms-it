@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top surfheading">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--                    Текст       метод   контроллер-->
+                @*@Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+                <a href="@Url.Action("Index", "Feed")">
+                    <img src="@Url.Content("~/Content/Images/logo.jpg")" height="45" />
+                </a>
+                @*@Html.ActionLink("SURF.RU", "Index", "Feed", new { @class = "my_heading" })*@
+            </div>
+                <div class="navbar-collapse collapse">
+                   
+                    <ul class="nav navbar-nav pull-right">
+                        @if (Session["UserId"] != null)//если пользователь авторизован
+                        {
+                            //показываем пользователя и кнопку выход
+                        <li>
+                            <div class="my_heading_icons">
+                                @{
+                                    var photo = Session["Photo"];
+
+                                    if (photo != null)
+                                    {
+                                        //var url = string.Format("~/Content/Images/Uploads/{0}.jpg", photo.ToString());
+                                        @*<img src=@Url.Content(url) height="25" />*@
+                                        <img src=@Url.Content(photo.ToString()) height="25" />
+
+                                    }
+                                }
+
+                                @Session["Nickname"]
+                                @*@Html.ActionLink("Выйти", "Logout", "Home")*@
+                                <a href="@Url.Action("Logout", "Home")">
+                                    <img src="@Url.Content("~/Content/Images/logout.png") " height="25" style=" margin-left:10px" />
+                                </a>
+                            </div>
+
+                        </li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("Войти", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Регистрация", "Index", "Register")</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>

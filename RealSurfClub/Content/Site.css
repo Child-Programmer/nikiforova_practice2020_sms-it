@@ -1,0 +1,108 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 750px;
+    max-height: 100px;
+}
+input {
+    width:85%;
+    margin-right:25px;
+}
+.my_checkbox {
+    width: 10%;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+.my_textarea {
+    max-width: 390px;
+    max-height: 50px;
+}
+.surfheading {
+    background-color:#c8d3d9;
+}
+
+.my_heading {
+    font-family: FasterOne-Regular;
+    color: white;
+    font-size: 35px;
+}
+.my_heading_icons{
+    margin-top:10px;
+}
+
+label {
+    width: 50%;
+    color: #6C757D;
+    font-style: normal;
+}
+.full-width {
+    width: 100%;
+}
+.tiny-panel{
+    /*margin:20px auto;*/
+    width:450px;
+}
+.wide-panel{
+
+}
+.panel-heading {
+    background-color: #c8d3d9;
+}
+
+.my_button {
+    background-color: #DCE4E9;
+    color: #818283;
+    width: 170px;
+    border-color: #AABACC;
+
+    margin-left:5px;
+}
+.my_div {
+    width: 300px;
+    margin-left: 400px;
+    margin-top: 30px;
+    border-color: #DCE4E9
+}
+.my_div_register {
+    width: 450px;
+    margin-left: 400px;
+    margin-top: 30px;
+    border-color: #DCE4E9;
+}
+.div_new_post {
+    width: 800px;
+    margin-left: 40px;
+    margin-top: 30px;
+    border-color: #DCE4E9;
+}
+.color_of_panel {
+    background-color: #DCE4E9;
+    color: #31708f;
+    border-color: #DCE4E9;
+}
+.all_left{
+    margin-left:20px;
+}
+@font-face {
+    font-family: 'FasterOne-Regular';
+    src: url('../MyFont/FasterOne-Regular.ttf') format('truetype');
+}
