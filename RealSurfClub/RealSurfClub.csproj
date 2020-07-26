@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ImageFormatHelper.cs" />
     <Compile Include="Helpers\ImageSaveHelper.cs" />
     <Compile Include="Helpers\ImageUrlHelper.cs" />
     <Compile Include="Models\DBModels\Post.cs" />
@@ -153,6 +154,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\logo.jpg" />
+    <Content Include="Content\Images\logout.png" />
+    <Content Include="Content\Images\user-default.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

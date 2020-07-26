@@ -83,7 +83,7 @@ label {
     border-color: #DCE4E9
 }
 .my_div_register {
-    width: 450px;
+    width: 500px;
     margin-left: 400px;
     margin-top: 30px;
     border-color: #DCE4E9;
@@ -101,6 +101,16 @@ label {
 }
 .all_left{
     margin-left:20px;
+}
+
+.my_indents {
+    width: 47%;
+}
+.my_inlin{
+    display:inline-table;
+}
+.avatar{
+    height:250px;
 }
 @font-face {
     font-family: 'FasterOne-Regular';

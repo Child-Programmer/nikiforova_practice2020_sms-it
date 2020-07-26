@@ -12,14 +12,12 @@ namespace RealSurfClub.Models.DBModels
         [Key]
         public int Id { get; set; }
 
-
         /// <summary>
         /// Никнейм
         /// </summary>
         [Display(Name="Псевдоним*")]
         [Required(ErrorMessage = "Ошибка в псевдониме"), MaxLength(20), MinLength(3)]
         public string NickName { get; set; }
-
 
         /// <summary>
         /// Почта
